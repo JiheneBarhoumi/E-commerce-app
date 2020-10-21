@@ -3,6 +3,8 @@ import products from "./data/products.js";
 //adding colors to the terminal
 import colors from "colors";
 import connectDB from "./config/db.js";
+import productRoutes from './routes/productRoutes.js'
+import {notFound,errorHandler} from './middleware/errorMiddleware.js'
 
 //we're using ES6 syntax because we added 'type' : 'module' to the package.json in the main folder
 
@@ -18,14 +20,12 @@ app.get("/", (req, res) => {
   res.send("api is running");
 });
 
-app.get("/api/products", (req, res) => {
-  res.json(products);
-});
+app.use('/api/products',productRoutes)
+//custom middlware to handle erros 
+app.use(notFound)
 
-app.get("/api/products/:id", (req, res) => {
-  const product = products.find((product) => product._id === req.params.id);
-  res.json(product);
-});
+
+app.use(errorHandler)
 
 //run the server
 //setting environment variable 2 => see the .env file
