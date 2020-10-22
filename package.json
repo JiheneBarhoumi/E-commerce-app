@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aichaabdelali/store-v-aicha.git"
+    "url": "git+https://github.com/JiheneBarhoumi/store_v3.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aichaabdelali/store-v-aicha/issues"
+    "url": "https://github.com/JiheneBarhoumi/store_v3/issues"
   },
-  "homepage": "https://github.com/aichaabdelali/store-v-aicha#readme"
+  "homepage": "https://github.com/JiheneBarhoumi/store_v3#readme"
 }
