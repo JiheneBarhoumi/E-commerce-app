@@ -1,21 +1,19 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-router-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Button, Card, ListGroupItem } from "react-bootstrap";
 import Rating from "../components/Rating";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
-import { listDetailsProducts } from "../actions/productActions";
+import { listProductDetails } from "../actions/productActions";
 
 const ProductScreen = ({ match }) => {
-  // error Object(...) is not function == video 6, 5ème dossier (dernière étape)
-  const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(listDetailsProducts(match.params.id));
+    dispatch(listProductDetails(match.params.id));
   }, [dispatch, match]);
-
   return (
     <>
       <Link className="btn btn-light my-3" to="/">
