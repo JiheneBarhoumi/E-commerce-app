@@ -1,6 +1,6 @@
 import React from "react";
 
-const loader = () => {
+const Loader = () => {
   return (
     <>
       <img
@@ -12,4 +12,4 @@ const loader = () => {
   );
 };
 
-export default loader;
+export default Loader;
