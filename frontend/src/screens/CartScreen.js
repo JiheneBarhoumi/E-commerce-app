@@ -58,7 +58,7 @@ const CartScreen = ({match,location,history}) => {
                                       <Col md={2}>            
                         <Form.Control
                         as='select'
-                        value={qty}
+                        value={item.qty}
                         onChange={(e)=>handleChange(e.target.value,item.product)}
                         >
                           {[...Array(item.countInStock).keys()].map(x=>
