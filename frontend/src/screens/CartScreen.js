@@ -25,8 +25,9 @@ const CartScreen = ({match,location,history}) => {
          dispatch(removeFromCart(id))
     }
 
-    const checkoutHandler=()=>{
+    const checkoutHandler=()=>{  
         history.push('/login?redirect=shipping')
+        console.log('history',history)
     }
 
     //const handleChange=(e.target.value,item.product)
