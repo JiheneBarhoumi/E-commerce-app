@@ -7,12 +7,15 @@ import Loader from "../components/Loader";
 
 import { getOrderDetails } from "../actions/orderActions";
 
-const OrderScreen = ({ match }) => {
+const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id;
   const dispatch = useDispatch();
 
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   if (!loading) {
     const addDecimals = (num) => {
@@ -25,7 +28,11 @@ const OrderScreen = ({ match }) => {
 
   useEffect(() => {
     dispatch(getOrderDetails(orderId));
-  }, [dispatch, orderId]);
+
+    if (!userInfo) {
+      history.push("/login");
+    }
+  }, [dispatch, orderId, userInfo]);
 
   return loading ? (
     <Loader />
