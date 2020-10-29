@@ -1,0 +1,20 @@
+.searchbox{
+   border: solid 0.1px;
+  border-color: white;
+  border-radius: 1.5px;
+  padding: 0;
+  background-color: white;
+ 
+}
+
+.searchbox input{
+border: none;
+width:200px;
+border-right: solid 0.3px black ;
+}
+.searchbox input:focus{
+  outline: none;
+  border: none;
+  width:200px;
+  border-right: solid 0.3px black ;
+  }
